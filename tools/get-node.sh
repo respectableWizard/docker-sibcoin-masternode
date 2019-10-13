@@ -1,8 +1,8 @@
 #!/bin/sh
 
-set -e
+set -xe
 
-#  1x2 Masternode docker template
+#  Masternode docker template
 #  Copyright © 2019 comozo
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -19,10 +19,10 @@ set -e
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-GIT_INFO=$(curl -sL "https://api.github.com/repos/sibcoin/sibcoin/releases/latest")
+GIT_INFO=$(curl -sL "https://api.github.com/repos/ivansib/sibcoin/releases/latest")
 
 # Need to make sure I'm getting the right version
-URL=$(printf "%s\n" "$GIT_INFO" | jq .assets[].browser_download_url -r | grep x86_64-linux | grep -v qt)
+URL=$(printf "%s\n" "$GIT_INFO" | jq .assets[].browser_download_url -r | grep linux64 | grep -v qt)
 
 if [ -f "./limits.conf" ]; then 
     if grep "NODE_BINARY=" "./limits.conf"; then 

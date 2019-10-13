@@ -34,4 +34,4 @@ docker run \
 You can also change the default RPC port with -e RPCPORT
 This will create the folder `.sibcoin` in `/some/directory` with a bare `sibcoin.conf`. You might want to edit the `sibcoin.conf` before running the container because with the bare config file it doesn't do much, it's basically just an empty wallet.
 
-TODO: Enable RPC monitoring on port 9215
+TODO: Enable RPC monitoring on port 1915
